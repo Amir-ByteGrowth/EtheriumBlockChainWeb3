@@ -14,6 +14,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.etheriumblockchainweb3.screens.connecttoetherium.ConnectToEthereum
 import com.example.etheriumblockchainweb3.ui.theme.Teal200
 
 @Composable
@@ -78,7 +79,12 @@ fun CreateEthereumWallet(modifier: Modifier = Modifier) {
             )
 
             Text(text = "0xkkaskdahjshdassadnsajkdnas", modifier = modifier.fillMaxWidth())
-
+            Divider(
+                color = Color.Red,
+                thickness = 1.dp,
+                modifier = modifier.padding(vertical = 20.dp)
+            )
+            ConnectToEthereum()
 
         }
     }
