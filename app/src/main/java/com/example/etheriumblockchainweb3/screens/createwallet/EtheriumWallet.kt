@@ -2,6 +2,8 @@ package com.example.etheriumblockchainweb3.screens.createwallet
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -15,6 +17,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.etheriumblockchainweb3.screens.connecttoetherium.ConnectToEthereum
+import com.example.etheriumblockchainweb3.screens.sendbalance.CreateSendBalance
 import com.example.etheriumblockchainweb3.ui.theme.Teal200
 
 @Composable
@@ -28,7 +31,7 @@ fun CreateEthereumWallet(modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.End,
         modifier = modifier
             .fillMaxWidth()
-            .padding(20.dp)
+            .padding(20.dp).verticalScroll(rememberScrollState())
     ) {
         Text(
             text = "Create Ethereum Wallet",
@@ -60,9 +63,9 @@ fun CreateEthereumWallet(modifier: Modifier = Modifier) {
 
 
         Divider(
-            color = Color.Red,
+            color = Color.Transparent,
             thickness = 1.dp,
-            modifier = modifier.padding(vertical = 20.dp)
+            modifier = modifier.padding(vertical = 10.dp)
         )
 
         if (isWalletAddressAvailable) {
@@ -80,11 +83,18 @@ fun CreateEthereumWallet(modifier: Modifier = Modifier) {
 
             Text(text = "0xkkaskdahjshdassadnsajkdnas", modifier = modifier.fillMaxWidth())
             Divider(
-                color = Color.Red,
+                color = Color.Transparent,
                 thickness = 1.dp,
                 modifier = modifier.padding(vertical = 20.dp)
             )
             ConnectToEthereum()
+
+            Divider(
+                color = Color.Transparent,
+                thickness = 1.dp,
+                modifier = modifier.padding(vertical = 20.dp)
+            )
+            CreateSendBalance()
 
         }
     }
